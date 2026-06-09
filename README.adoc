@@ -8,6 +8,11 @@ https://api.gandi.net/docs/livedns/[Gandi LiveDNS v5].
 Auth par *Personal Access Token* (Bearer). Transport HTTP injectable
 pour les tests.
 
+NOTE: Le PAT doit porter la permission Gandi *« Gérer la configuration
+technique des domaines »* (serveurs de noms, enregistrements DNS, glue
+records, DNSSEC) — c'est elle qui autorise les appels LiveDNS.
+À générer dans le compte Gandi → Paramètres → « Personal Access Tokens ».
+
 [source,crystal]
 ----
 require "api-gandi"
