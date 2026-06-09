@@ -1,0 +1,21 @@
+name: api-gandi
+version: 0.1.0
+
+description: >
+  Client Crystal pur (stdlib uniquement) pour l'API Gandi LiveDNS v5.
+  Couvre la gestion des enregistrements d'une zone (list, get, upsert
+  idempotent A/AAAA/CNAME/TXT/…). Auth par Personal Access Token
+  (Bearer), zéro dépendance externe. Transport HTTP injectable pour
+  les tests.
+
+authors:
+  - ALOLI sas <philippe@aloli.fr>
+
+crystal: ">= 1.19.1"
+
+license: MIT
+
+development_dependencies:
+  ameba:
+    github: crystal-ameba/ameba
+    version: "~> 1.6"

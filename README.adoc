@@ -1,0 +1,29 @@
+= api-gandi
+:toc: left
+:source-highlighter: rouge
+
+Client Crystal pur (stdlib uniquement) pour l'API
+https://api.gandi.net/docs/livedns/[Gandi LiveDNS v5].
+
+Auth par *Personal Access Token* (Bearer). Transport HTTP injectable
+pour les tests.
+
+[source,crystal]
+----
+require "api-gandi"
+
+client = GandiApi::Client.new(token: ENV["GANDI_PAT"])
+client.livedns.ensure_record("quimeo.fr", "A", "www", "203.0.113.7") # PUT idempotent
+records = client.livedns.list_records("quimeo.fr")
+----
+
+== Endpoints couverts
+
+* `livedns.list_records(fqdn)` — liste les rrsets de la zone.
+* `livedns.get_record(fqdn, name, type)` — un rrset (ou nil).
+* `livedns.ensure_record(fqdn, type, name, value|values, ttl)` — upsert idempotent (PUT).
+* `livedns.delete_record(fqdn, name, type)`.
+
+== Licence
+
+MIT © ALOLI sas.

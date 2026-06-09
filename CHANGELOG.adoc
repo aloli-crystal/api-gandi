@@ -1,0 +1,11 @@
+= Changelog
+
+== 0.1.0
+
+=== Ajouté
+
+* Client Gandi LiveDNS v5 (auth PAT Bearer, transport injectable).
+* `Endpoints::LiveDns` : list_records, get_record, ensure_record
+  (upsert PUT idempotent, mono/multi-valeur), delete_record.
+* Hiérarchie d'erreurs (ApiError / AuthenticationError / NotFound /
+  RateLimited).
