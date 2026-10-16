@@ -96,7 +96,7 @@ module GandiApi
     private def handle_response(status : Int32, body : String, method : String, path : String) : JSON::Any?
       case status
       when 200..299
-        return nil if body.empty?
+        return if body.empty?
         JSON.parse(body)
       when 401, 403
         raise AuthenticationError.new(format_error(status, body, method, path), status)

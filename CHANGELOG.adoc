@@ -1,5 +1,11 @@
 = Changelog
 
+== 0.1.1 (16 octobre 2026)
+
+=== Modifié
+
+* ameba 1.7 et Crystal 1.22.0 en CI ; nouvelles règles appliquées, aucun changement de comportement.
+
 == 0.1.0
 
 === Ajouté

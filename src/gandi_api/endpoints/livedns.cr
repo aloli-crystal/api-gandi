@@ -36,7 +36,7 @@ module GandiApi::Endpoints
     # Récupère le rrset `(name, type)` ou nil s'il n'existe pas.
     def get_record(fqdn : String, name : String, type : String) : Record?
       body = @client.call("GET", "/domains/#{fqdn}/records/#{rrset_name(name)}/#{type}")
-      return nil unless body
+      return unless body
       Record.from_json(body.to_json)
     rescue GandiApi::NotFound
       nil
